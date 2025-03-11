@@ -106,8 +106,8 @@ const Chat = () => {
               SB
             </div>
             <div className="flex flex-col text-xs">
-              <span className="text-white">Stephane Boghossian</span>
-              <span className="text-white/60">stephane@lovable.dev</span>
+              <span className="text-white">Jean Paul Gautier</span>
+              <span className="text-white/60">jp.gautier@gmail.com</span>
             </div>
           </div>
         </div>
