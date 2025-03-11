@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Twitter, Mail } from 'lucide-react';
 import AnnouncementBar from '@/components/AnnouncementBar';
@@ -8,11 +7,9 @@ import ButtonSecondary from '@/components/ButtonSecondary';
 import ExampleChip from '@/components/ExampleChip';
 import YCombinatorBadge from '@/components/YCombinatorBadge';
 import SearchBar from '@/components/SearchBar';
-
 const Index = () => {
   const product3dRef = useRef<HTMLDivElement>(null);
   const deviceImageRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const handleScroll = () => {
       if (product3dRef.current && deviceImageRef.current) {
@@ -21,13 +18,10 @@ const Index = () => {
         deviceImageRef.current.style.transform = `translateY(${scrollPosition * -0.03}px)`;
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  return (
-    <div className="flex flex-col min-h-screen bg-adam-darker text-white overflow-x-hidden">
+  return <div className="flex flex-col min-h-screen bg-adam-darker text-white overflow-x-hidden">
       {/* Announcement Bar */}
       <AnnouncementBar />
 
@@ -59,14 +53,8 @@ const Index = () => {
           {/* Right Content - 3D Product */}
           <div className="lg:w-1/2 flex justify-center relative animate-fade-in">
             <div ref={product3dRef} className="relative animate-float">
-              <img 
-                src="/lovable-uploads/7973c816-d414-4bfa-b312-1407036a6e21.png" 
-                alt="3D Model" 
-                className="max-w-xs"
-              />
-              <div className="absolute bottom-0 right-0 text-xs text-white/60 max-w-[200px] text-right">
-                "Create a detailed enclosure for a Raspberry Pi with ventilation holes and cutouts for IO ports"
-              </div>
+              <img alt="3D Model" className="max-w-xs" src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/db6d47ddf12125e109f8a668ff98036d/large.png" />
+              
             </div>
           </div>
         </div>
@@ -139,8 +127,6 @@ const Index = () => {
           <Logo />
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
