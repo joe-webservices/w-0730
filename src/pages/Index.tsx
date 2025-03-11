@@ -58,10 +58,12 @@ const Index = () => {
             <YCombinatorBadge />
           </div>
           
-          {/* Right Content - 3D Product */}
+          {/* Right Content - Floating 3D Cube */}
           <div className="lg:w-1/2 flex justify-center relative animate-fade-in">
             <div ref={product3dRef} className="relative animate-float w-full max-w-md">
-              <Interactive3DViewer />
+              <div className="h-64 md:h-80">
+                <Interactive3DViewer simple={true} showColorPicker={false} />
+              </div>
             </div>
           </div>
         </div>
@@ -85,8 +87,8 @@ const Index = () => {
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 <div className="ml-4 text-white/60 text-xs">Adam Demo</div>
               </div>
-              <div className="p-4 flex justify-center items-center h-full">
-                <div className="w-64 h-40 bg-adam-pink/90 rounded-md animate-pulse-glow"></div>
+              <div className="p-4">
+                <Interactive3DViewer showColorPicker={true} />
               </div>
             </div>
           </div>
