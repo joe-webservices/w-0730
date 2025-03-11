@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Twitter, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -8,6 +9,7 @@ import ButtonSecondary from '@/components/ButtonSecondary';
 import ExampleChip from '@/components/ExampleChip';
 import YCombinatorBadge from '@/components/YCombinatorBadge';
 import SearchBar from '@/components/SearchBar';
+import Interactive3DViewer from '@/components/Interactive3DViewer';
 
 const Index = () => {
   const product3dRef = useRef<HTMLDivElement>(null);
@@ -58,9 +60,8 @@ const Index = () => {
           
           {/* Right Content - 3D Product */}
           <div className="lg:w-1/2 flex justify-center relative animate-fade-in">
-            <div ref={product3dRef} className="relative animate-float">
-              <img alt="3D Model" className="max-w-xs" src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/db6d47ddf12125e109f8a668ff98036d/large.png" />
-              
+            <div ref={product3dRef} className="relative animate-float w-full max-w-md">
+              <Interactive3DViewer />
             </div>
           </div>
         </div>
