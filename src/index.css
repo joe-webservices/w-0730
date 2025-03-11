@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 329 100% 61%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +92,59 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-adam-darker text-white font-sans m-0 p-0;
+  }
+
+  .announcement-bar {
+    background: linear-gradient(90deg, rgba(10,8,11,1) 0%, rgba(21,19,25,1) 50%, rgba(10,8,11,1) 100%);
+  }
+
+  .hero-gradient {
+    background: radial-gradient(circle at center, rgba(21,19,25,1) 0%, rgba(10,8,11,1) 100%);
+  }
+
+  .glow-pink {
+    box-shadow: 0 0 20px rgba(255, 59, 154, 0.6);
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #FF3B9A 0%, #FF267C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .action-button-glow {
+    position: relative;
+  }
+
+  .action-button-glow::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, #FF3B9A 0%, #FF267C 100%);
+    border-radius: 9999px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .action-button-glow:hover::before {
+    opacity: 1;
+  }
+
+  .example-chips {
+    backdrop-filter: blur(2px);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+  }
+  
+  .example-chips:hover {
+    box-shadow: inset 0 0 0 1px rgba(255, 59, 154, 0.5);
+    transform: translateY(-2px);
   }
 }
