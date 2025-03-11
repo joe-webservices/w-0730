@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUp, MessageSquare, Menu, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ChatConversation from '../components/ChatConversation';
-import ModelViewer from '../components/ModelViewer';
-import ParametersPanel from '../components/ParametersPanel';
-import ChatControls from '../components/ChatControls';
-
 const ProjectCard = ({
   title,
   imageSrc
@@ -31,61 +26,51 @@ const ProjectCard = ({
       </div>
     </div>;
 };
-
 const Chat = () => {
   const [prompt, setPrompt] = useState('');
-  const [showConversation, setShowConversation] = useState(true);
-  const [showWelcome, setShowWelcome] = useState(false);
-  
-  const featuredProjects = [
-    {
-      title: 'Jewelry Holder',
-      imageSrc: '/lovable-uploads/af99a164-9ee9-4a6f-8b0a-947e590f5f3e.png'
-    }, {
-      title: 'Laptop Stand',
-      imageSrc: 'https://placehold.co/200x150/222/44aaff/png'
-    }, {
-      title: 'Candle Stand',
-      imageSrc: 'https://placehold.co/200x150/222/ff44aa/png'
-    }, {
-      title: 'LEGO Brick',
-      imageSrc: 'https://placehold.co/200x150/222/ff6644/png'
-    }, {
-      title: 'Shelf Bracket',
-      imageSrc: 'https://placehold.co/200x150/222/ff44aa/png'
-    }, {
-      title: 'Propeller Blade',
-      imageSrc: 'https://placehold.co/200x150/222/ffaa44/png'
-    }, {
-      title: 'Ergonomic Spatula',
-      imageSrc: 'https://placehold.co/200x150/222/44ff66/png'
-    }, {
-      title: 'Wall-Mounted key holder',
-      imageSrc: 'https://placehold.co/200x150/222/ffdd44/png'
-    }, {
-      title: 'Toothbrush holder',
-      imageSrc: 'https://placehold.co/200x150/222/44ddff/png'
-    }, {
-      title: 'Stamp',
-      imageSrc: 'https://placehold.co/200x150/222/44ddff/png'
-    }, {
-      title: 'Basic Phone Stand',
-      imageSrc: 'https://placehold.co/200x150/222/ff4444/png'
-    }, {
-      title: 'Pencil Holder',
-      imageSrc: 'https://placehold.co/200x150/222/44ff44/png'
-    }
-  ];
-
+  const featuredProjects = [{
+    title: 'Jewelry Holder',
+    imageSrc: '/lovable-uploads/af99a164-9ee9-4a6f-8b0a-947e590f5f3e.png'
+  }, {
+    title: 'Laptop Stand',
+    imageSrc: 'https://placehold.co/200x150/222/44aaff/png'
+  }, {
+    title: 'Candle Stand',
+    imageSrc: 'https://placehold.co/200x150/222/ff44aa/png'
+  }, {
+    title: 'LEGO Brick',
+    imageSrc: 'https://placehold.co/200x150/222/ff6644/png'
+  }, {
+    title: 'Shelf Bracket',
+    imageSrc: 'https://placehold.co/200x150/222/ff44aa/png'
+  }, {
+    title: 'Propeller Blade',
+    imageSrc: 'https://placehold.co/200x150/222/ffaa44/png'
+  }, {
+    title: 'Ergonomic Spatula',
+    imageSrc: 'https://placehold.co/200x150/222/44ff66/png'
+  }, {
+    title: 'Wall-Mounted key holder',
+    imageSrc: 'https://placehold.co/200x150/222/ffdd44/png'
+  }, {
+    title: 'Toothbrush holder',
+    imageSrc: 'https://placehold.co/200x150/222/44ddff/png'
+  }, {
+    title: 'Stamp',
+    imageSrc: 'https://placehold.co/200x150/222/44ddff/png'
+  }, {
+    title: 'Basic Phone Stand',
+    imageSrc: 'https://placehold.co/200x150/222/ff4444/png'
+  }, {
+    title: 'Pencil Holder',
+    imageSrc: 'https://placehold.co/200x150/222/44ff44/png'
+  }];
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle submission logic here
     console.log('Submitted prompt:', prompt);
     setPrompt('');
-    setShowWelcome(false);
-    setShowConversation(true);
   };
-
   return <div className="flex h-screen bg-adam-dark text-white overflow-hidden">
       {/* Sidebar */}
       <div className="w-[192px] bg-adam-darker border-r border-white/10 flex flex-col">
@@ -129,61 +114,30 @@ const Chat = () => {
       </div>
 
       {/* Main Content */}
-      {showWelcome ? (
-        <div className="flex-1 flex flex-col overflow-y-auto pb-20">
-          <div className="max-w-3xl mx-auto w-full px-4 py-12">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold mb-2">What can I help you build?</h1>
-              <p className="text-white/70">Describe the 3D part you want to create and I'll help you build it.</p>
+      <div className="flex-1 flex flex-col overflow-y-auto pb-20">
+        <div className="max-w-3xl mx-auto w-full px-4 py-12">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold mb-2">What can I help you build?</h1>
+            <p className="text-white/70">Describe the 3D part you want to create and I'll help you build it.</p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="mb-16">
+            <div className="relative">
+              <textarea value={prompt} onChange={e => setPrompt(e.target.value)} placeholder="Describe an object..." className="w-full bg-adam-gray/50 border border-white/10 rounded-lg py-3 px-4 pr-12 min-h-[80px] text-white resize-none focus:outline-none focus:ring-1 focus:ring-adam-pink/50" />
+              <button type="submit" className="absolute bottom-3 right-3 bg-adam-pink rounded-md p-2 hover:bg-opacity-80 transition-colors">
+                <ArrowUp size={16} />
+              </button>
             </div>
+          </form>
 
-            <form onSubmit={handleSubmit} className="mb-16">
-              <div className="relative">
-                <textarea 
-                  value={prompt} 
-                  onChange={e => setPrompt(e.target.value)} 
-                  placeholder="Describe an object..." 
-                  className="w-full bg-adam-gray/50 border border-white/10 rounded-lg py-3 px-4 pr-12 min-h-[80px] text-white resize-none focus:outline-none focus:ring-1 focus:ring-adam-pink/50" 
-                />
-                <button 
-                  type="submit" 
-                  className="absolute bottom-3 right-3 bg-adam-pink rounded-md p-2 hover:bg-opacity-80 transition-colors"
-                >
-                  <ArrowUp size={16} />
-                </button>
-              </div>
-            </form>
-
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-6">Featured Projects</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {featuredProjects.map((project, index) => (
-                  <ProjectCard key={index} title={project.title} imageSrc={project.imageSrc} />
-                ))}
-              </div>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-6">Featured Projects</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {featuredProjects.map((project, index) => <ProjectCard key={index} title={project.title} imageSrc={project.imageSrc} />)}
             </div>
           </div>
         </div>
-      ) : (
-        <div className="flex-1 flex flex-col h-full overflow-hidden">
-          <div className="flex-1 flex overflow-hidden">
-            <div className="w-[320px] border-r border-white/10 flex flex-col overflow-hidden">
-              <ChatConversation />
-            </div>
-            
-            <div className="flex-1 flex flex-col overflow-hidden">
-              <ModelViewer />
-            </div>
-            
-            <div className="w-[280px]">
-              <ParametersPanel />
-            </div>
-          </div>
-          
-          <ChatControls />
-        </div>
-      )}
+      </div>
     </div>;
 };
-
 export default Chat;
