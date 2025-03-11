@@ -5,6 +5,7 @@ import ChatConversation from '../components/chat/ChatConversation';
 import ModelViewer from '../components/chat/ModelViewer';
 import ParametersPanel from '../components/chat/ParametersPanel';
 import ChatControls from '../components/chat/ChatControls';
+import Logo from '@/components/Logo';
 
 const ProjectCard = ({
   title,
@@ -129,7 +130,7 @@ const Chat = () => {
       <div className="w-[192px] bg-adam-darker border-r border-white/10 flex flex-col">
         <div className="p-4">
           <Link to="/" className="block mb-4">
-            <img alt="Adam Logo" className="h-8" src="https://media.licdn.com/dms/image/v2/D560BAQE1emwDVJmJVw/company-logo_200_200/company-logo_200_200/0/1736450650526/adamcad_logo?e=2147483647&v=beta&t=Ii0Nx2x1AzWayOptjqrPjdMoxSjZcaZekODuifHbSv4" />
+            <Logo />
           </Link>
           <button className="w-full bg-transparent hover:bg-adam-gray/30 border border-adam-pink/30 text-white rounded-full py-2 px-4 flex items-center justify-center gap-2 transition-colors mb-4">
             <Plus size={16} />
