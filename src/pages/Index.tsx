@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Twitter, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import AnnouncementBar from '@/components/AnnouncementBar';
 import Logo from '@/components/Logo';
 import ButtonPrimary from '@/components/ButtonPrimary';
@@ -7,9 +8,11 @@ import ButtonSecondary from '@/components/ButtonSecondary';
 import ExampleChip from '@/components/ExampleChip';
 import YCombinatorBadge from '@/components/YCombinatorBadge';
 import SearchBar from '@/components/SearchBar';
+
 const Index = () => {
   const product3dRef = useRef<HTMLDivElement>(null);
   const deviceImageRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleScroll = () => {
       if (product3dRef.current && deviceImageRef.current) {
@@ -21,6 +24,7 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return <div className="flex flex-col min-h-screen bg-adam-darker text-white overflow-x-hidden">
       {/* Announcement Bar */}
       <AnnouncementBar />
@@ -43,9 +47,11 @@ const Index = () => {
               Generate CAD with AI in seconds.
             </p>
             <div className="mt-10">
-              <ButtonSecondary icon={true} className="group">
-                Try Adam Now
-              </ButtonSecondary>
+              <Link to="/chat">
+                <ButtonSecondary icon={true} className="group">
+                  Try Adam Now
+                </ButtonSecondary>
+              </Link>
             </div>
             <YCombinatorBadge />
           </div>
@@ -129,4 +135,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
