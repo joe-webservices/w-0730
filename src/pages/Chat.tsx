@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowUp, MessageSquare, Menu, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const ProjectCard = ({
   title,
   imageSrc
@@ -26,6 +27,7 @@ const ProjectCard = ({
       </div>
     </div>;
 };
+
 const Chat = () => {
   const [prompt, setPrompt] = useState('');
   const featuredProjects = [{
@@ -65,14 +67,14 @@ const Chat = () => {
     title: 'Pencil Holder',
     imageSrc: 'https://placehold.co/200x150/222/44ff44/png'
   }];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle submission logic here
     console.log('Submitted prompt:', prompt);
     setPrompt('');
   };
+
   return <div className="flex h-screen bg-adam-dark text-white overflow-hidden">
-      {/* Sidebar */}
       <div className="w-[192px] bg-adam-darker border-r border-white/10 flex flex-col">
         <div className="p-4">
           <Link to="/" className="block mb-4">
@@ -113,7 +115,6 @@ const Chat = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-y-auto pb-20">
         <div className="max-w-3xl mx-auto w-full px-4 py-12">
           <div className="text-center mb-8">
@@ -123,9 +124,18 @@ const Chat = () => {
 
           <form onSubmit={handleSubmit} className="mb-16">
             <div className="relative">
-              <textarea value={prompt} onChange={e => setPrompt(e.target.value)} placeholder="Describe an object..." className="w-full bg-adam-gray/50 border border-white/10 rounded-lg py-3 px-4 pr-12 min-h-[80px] text-white resize-none focus:outline-none focus:ring-1 focus:ring-adam-pink/50" />
-              <button type="submit" className="absolute bottom-3 right-3 bg-adam-pink rounded-md p-2 hover:bg-opacity-80 transition-colors">
-                <ArrowUp size={16} />
+              <textarea 
+                value={prompt} 
+                onChange={e => setPrompt(e.target.value)} 
+                placeholder="Describe an object..." 
+                className="w-full bg-adam-gray/50 border border-white/10 rounded-lg py-3 px-4 pr-12 min-h-[80px] text-white resize-none focus:outline-none focus:ring-1 focus:ring-adam-pink/50" 
+              />
+              <button 
+                type="submit" 
+                className="absolute bottom-3 right-3 bg-[#D946EF] rounded-md p-2 hover:bg-opacity-80 transition-colors"
+                aria-label="Submit"
+              >
+                <ArrowUp size={16} className="text-white" />
               </button>
             </div>
           </form>
@@ -140,4 +150,5 @@ const Chat = () => {
       </div>
     </div>;
 };
+
 export default Chat;
