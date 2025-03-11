@@ -1,15 +1,8 @@
-
 import React from 'react';
-
 const ModelViewer: React.FC = () => {
-  return (
-    <div className="h-full w-full flex items-center justify-center bg-[#0A080B]">
+  return <div className="h-full w-full flex items-center justify-center bg-[#0A080B]">
       <div className="relative">
-        <img 
-          src="/lovable-uploads/903bf567-cddf-46ec-be21-80ea8088439a.png" 
-          alt="3D Model" 
-          className="h-64 object-contain"
-        />
+        <img alt="3D Model" className="h-64 object-contain" src="https://cullen3ddesign.com/wp-content/uploads/2023/06/5-1200x1139.png" />
         
         {/* STL preview icon */}
         <div className="absolute bottom-0 right-0 bg-white p-2 rounded-md shadow-lg">
@@ -19,8 +12,6 @@ const ModelViewer: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ModelViewer;
