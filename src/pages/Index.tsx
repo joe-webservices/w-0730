@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Twitter, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,11 +9,9 @@ import ExampleChip from '@/components/ExampleChip';
 import YCombinatorBadge from '@/components/YCombinatorBadge';
 import SearchBar from '@/components/SearchBar';
 import Interactive3DViewer from '@/components/Interactive3DViewer';
-
 const Index = () => {
   const product3dRef = useRef<HTMLDivElement>(null);
   const deviceImageRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const handleScroll = () => {
       if (product3dRef.current && deviceImageRef.current) {
@@ -26,7 +23,6 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   return <div className="flex flex-col min-h-screen bg-adam-darker text-white overflow-x-hidden">
       {/* Announcement Bar */}
       <AnnouncementBar />
@@ -38,7 +34,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="hero-gradient w-full pt-16 pb-24 px-4 md:px-8 lg:px-0">
+      <section className="hero-gradient w-full pt-16 pb-24 px-4 md:px-8 lg:px-0 bg-slate-950">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
           <div className="lg:w-1/2 animate-fade-in">
@@ -138,6 +134,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
-
