@@ -5,36 +5,29 @@ import ButtonPrimary from '@/components/ButtonPrimary';
 import ButtonSecondary from '@/components/ButtonSecondary';
 import Logo from '@/components/Logo';
 
-// New brand colors:
-// Primary: #3563E9 (bright blue)
-// Secondary: #36B37E (green)
-// Accent: #FFB620 (amber)
-// Dark: #192440
-// Light: #F3F6FF
-
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white text-gray-800 overflow-x-hidden">
       {/* Header */}
       <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="bg-[#3563E9] text-white p-2 rounded-lg">
-              <Zap size={24} />
-            </div>
-            <span className="text-[#192440] text-2xl font-bold">AutoLead</span>
-            <span className="text-[#3563E9] text-2xl font-bold">Systems</span>
-          </div>
+          <Logo />
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-gray-600 hover:text-[#3563E9] font-medium transition-colors">Features</a>
-            <a href="#testimonials" className="text-gray-600 hover:text-[#3563E9] font-medium transition-colors">Testimonials</a>
-            <a href="#about" className="text-gray-600 hover:text-[#3563E9] font-medium transition-colors">About Us</a>
+            <Link to="/" className="text-[#3563E9] font-medium">Home</Link>
+            <Link to="/about" className="text-gray-600 hover:text-[#3563E9] font-medium transition-colors">About us</Link>
           </nav>
           <ButtonPrimary className="bg-[#3563E9] hover:bg-[#2854d8]">
             Get Started Free
           </ButtonPrimary>
         </div>
       </header>
+
+      {/* Banner */}
+      <div className="w-full bg-[#F3F6FF] py-2">
+        <p className="text-center text-sm text-gray-600">
+          This site is a quick demo — no charge, no commitment
+        </p>
+      </div>
 
       {/* Hero Section */}
       <section className="w-full pt-16 pb-24 px-4 bg-gradient-to-br from-[#F3F6FF] to-white">
@@ -132,9 +125,144 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Taglines Section - Updated with new taglines */}
-      <section className="w-full py-16 bg-[#192440] text-white">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* What We Do Section */}
+      <section className="w-full py-16 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#192440]">What We Actually Do</h2>
+            <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+              We help businesses automate lead generation using AI-powered workflows. Our system turns conversations into qualified leads—on autopilot—so you can focus on closing deals, not chasing prospects.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-[#F3F6FF] p-8 rounded-xl">
+              <div className="text-[#3563E9] text-2xl font-bold mb-4">📈</div>
+              <h3 className="text-xl font-bold text-[#192440] mb-3">Supercharge Your Sales with Targeted Facebook Ads</h3>
+              
+              <div className="space-y-4 mt-6">
+                <div className="flex gap-3">
+                  <CheckCircle size={24} className="text-[#36B37E] shrink-0" />
+                  <p className="text-gray-700">
+                    <span className="font-semibold">AI-Driven Facebook Ads Strategy:</span> We don't just run ads — we optimize your entire lead journey using AI tools to maximize your conversion rate and bring in qualified leads.
+                  </p>
+                </div>
+                
+                <div className="flex gap-3">
+                  <CheckCircle size={24} className="text-[#36B37E] shrink-0" />
+                  <p className="text-gray-700">
+                    <span className="font-semibold">Performance-Based Partnership:</span> No upfront payment. We work first, and you only pay when you see the results we promise.
+                  </p>
+                </div>
+                
+                <div className="flex gap-3">
+                  <CheckCircle size={24} className="text-[#36B37E] shrink-0" />
+                  <p className="text-gray-700">
+                    <span className="font-semibold">1-Month Free Trial – Build Trust, Risk-Free:</span> We offer the first month of service completely free. Experience the value before making any commitment.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-[#F3F6FF] p-8 rounded-xl">
+              <div className="text-[#3563E9] text-2xl font-bold mb-4">🛠️</div>
+              <h3 className="text-xl font-bold text-[#192440] mb-3">Services We Offer</h3>
+              
+              <div className="space-y-3 mt-6">
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#36B37E]/10 text-[#36B37E] p-1 rounded">✓</div>
+                  <p className="text-gray-700">WhatsApp Automation for Follow-ups</p>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#36B37E]/10 text-[#36B37E] p-1 rounded">✓</div>
+                  <p className="text-gray-700">Lead Capture & CRM Integration</p>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#36B37E]/10 text-[#36B37E] p-1 rounded">✓</div>
+                  <p className="text-gray-700">Real-Time Reporting & Alerts</p>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#36B37E]/10 text-[#36B37E] p-1 rounded">✓</div>
+                  <p className="text-gray-700">Fully Customizable AI Chatbots</p>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#36B37E]/10 text-[#36B37E] p-1 rounded">✓</div>
+                  <p className="text-gray-700">Facebook Ad Strategy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Trust Us Section */}
+      <section className="w-full py-16 px-4 bg-[#F3F6FF]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#192440]">Why Trust Us?</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="w-12 h-12 bg-[#3563E9]/10 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#3563E9]">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-[#192440]">Privacy First</h3>
+              <p className="text-gray-600">
+                All client data stays secure and never shared.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="w-12 h-12 bg-[#3563E9]/10 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#3563E9]">
+                  <path d="M12 2a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H2"></path>
+                  <path d="M22 12h-9"></path>
+                  <path d="m15 15 3-3-3-3"></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-[#192440]">AI-Powered Automation</h3>
+              <p className="text-gray-600">
+                We use cutting-edge AI to deliver smart workflows.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="w-12 h-12 bg-[#3563E9]/10 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#3563E9]">
+                  <path d="m2 22 3-3"></path>
+                  <path d="M11 13h9"></path>
+                  <path d="M18 16.5V11"></path>
+                  <path d="M18.5 8.5a2.5 2.5 0 0 0-5 0v1a2.5 2.5 0 0 0 5 0Z"></path>
+                  <path d="M7 6c0-1.1.9-2 2-2h.5"></path>
+                  <path d="M11 4h9"></path>
+                  <path d="M11 7h5"></path>
+                  <path d="M11 10h3"></path>
+                  <path d="M11 13h9"></path>
+                  <path d="M11 16h7"></path>
+                  <path d="M11 19h5"></path>
+                  <path d="m3.23 10.73 1.54-1.54a2 2 0 0 1 2.83 0l4.27 4.27"></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-[#192440]">Growth Focused</h3>
+              <p className="text-gray-600">
+                Our systems help local businesses scale faster.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Taglines Section - New section with the 3 taglines */}
+      <section className="w-full py-16 px-4 bg-[#192440] text-white">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center p-6 border border-white/10 rounded-xl bg-white/5 backdrop-blur-sm">
               <h3 className="text-2xl font-bold mb-3">"From Click to Customer — Automatically"</h3>
@@ -152,90 +280,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="w-full py-24 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-[#3563E9] font-semibold">POWERFUL FEATURES</span>
-            <h2 className="text-4xl font-bold mt-2 text-[#192440]">Everything you need to grow your service business</h2>
-            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-              Our platform combines AI, automation, and industry expertise to create a complete lead generation system that works 24/7.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-[#F3F6FF] rounded-lg flex items-center justify-center mb-4">
-                <MessageSquare size={24} className="text-[#3563E9]" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#192440]">AI Chat Automation</h3>
-              <p className="text-gray-600">
-                Our smart chatbots engage with potential customers, answer questions, and qualify leads 24/7, even when you're off the clock.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-[#F3F6FF] rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#3563E9]">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#192440]">WhatsApp Integration</h3>
-              <p className="text-gray-600">
-                Connect with customers where they are. Our system integrates with WhatsApp for seamless follow-ups and notifications.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-[#F3F6FF] rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#3563E9]">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#192440]">Facebook Ad Management</h3>
-              <p className="text-gray-600">
-                Target the right customers with our AI-driven Facebook ad campaigns, optimized for maximum conversion at minimum cost.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-[#F3F6FF] rounded-lg flex items-center justify-center mb-4">
-                <BarChart3 size={24} className="text-[#3563E9]" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#192440]">Analytics Dashboard</h3>
-              <p className="text-gray-600">
-                Track performance with real-time insights into lead quality, conversion rates, and ROI on your marketing spend.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-[#F3F6FF] rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#3563E9]">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="m16 8-2 2-6 6"></path>
-                  <path d="m8 10 2 2"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#192440]">CRM Integration</h3>
-              <p className="text-gray-600">
-                Seamlessly sync with your existing CRM system to ensure all leads are tracked and followed up consistently.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-[#F3F6FF] rounded-lg flex items-center justify-center mb-4">
-                <Users size={24} className="text-[#3563E9]" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#192440]">Lead Qualification</h3>
-              <p className="text-gray-600">
-                Let AI identify your most promising leads, so you can focus your time and resources on clients most likely to convert.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section - Updated testimonials */}
+      {/* Testimonial Section - Updated with new testimonial */}
       <section id="testimonials" className="w-full py-24 px-4 bg-[#F3F6FF]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -283,54 +328,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Us Section - Updated content */}
-      <section id="about" className="w-full py-24 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2 relative">
-            <div className="bg-[#3563E9] w-full h-80 rounded-2xl overflow-hidden relative">
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-8 text-center">
-                <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
-                <p className="text-lg">
-                  To empower service businesses with AI technology that was previously only available to large corporations, leveling the playing field and driving growth.
-                </p>
-              </div>
-            </div>
-            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-[#FFB620]/20 rounded-full blur-3xl -z-10"></div>
-          </div>
-          
-          <div className="lg:w-1/2">
-            <span className="text-[#3563E9] font-semibold">ABOUT AUTOLEAD SYSTEMS</span>
-            <h2 className="text-4xl font-bold mt-2 mb-6 text-[#192440]">Your automated growth partner</h2>
-            <p className="text-gray-700 mb-4">
-              We're AutoLead Systems — your automated growth partner. We help service-based businesses like yours turn conversations into customers using AI chatbots, smart ads, and instant follow-ups.
-            </p>
-            <p className="text-gray-700 mb-6">
-              From the first click to the final payment, we automate every step — so you can focus on what you do best. Our platform combines cutting-edge AI technology with deep industry knowledge to create automated lead generation systems that work specifically for electricians, plumbers, HVAC technicians, and other service providers.
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center gap-2">
-                <CheckCircle size={20} className="text-[#36B37E]" />
-                <span className="text-gray-700">Founded in 2019</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle size={20} className="text-[#36B37E]" />
-                <span className="text-gray-700">15,000+ businesses helped</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle size={20} className="text-[#36B37E]" />
-                <span className="text-gray-700">97% client satisfaction</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle size={20} className="text-[#36B37E]" />
-                <span className="text-gray-700">Industry specialized AI</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section - Updated with new CTA */}
+      {/* CTA Section */}
       <section className="w-full py-20 px-4 bg-[#192440] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to transform your business growth?</h2>
@@ -416,9 +414,9 @@ const Index = () => {
               © 2025 AutoLead Systems. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-gray-500 text-sm hover:text-[#3563E9]">Privacy Policy</a>
-              <a href="#" className="text-gray-500 text-sm hover:text-[#3563E9]">Terms of Service</a>
-              <a href="#" className="text-gray-500 text-sm hover:text-[#3563E9]">Cookie Policy</a>
+              <Link to="/privacy" className="text-gray-500 text-sm hover:text-[#3563E9]">Privacy Policy</Link>
+              <Link to="/terms" className="text-gray-500 text-sm hover:text-[#3563E9]">Terms of Service</Link>
+              <Link to="/contact" className="text-gray-500 text-sm hover:text-[#3563E9]">Contact Us</Link>
             </div>
           </div>
         </div>
