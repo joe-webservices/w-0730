@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, MessageSquare, CheckCircle, BarChart3, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -40,18 +39,18 @@ const Index = () => {
       {/* Hero Section */}
       <section className="w-full pt-16 pb-24 px-4 bg-gradient-to-br from-[#F3F6FF] to-white">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Left Content */}
+          {/* Left Content - Updated with new headline and subheadline */}
           <div className="lg:w-1/2 animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight text-[#192440]">
-              AI-Powered Leads <span className="text-[#3563E9]">While You Sleep</span>
+              Let AI Fill Your Calendar <span className="text-[#3563E9]">While You Run the Business</span>
             </h1>
             <p className="mt-6 text-xl text-gray-700">
-              Automate your lead generation, follow-ups, and client management specifically designed for service professionals.
+              24/7 lead generation, follow-up, and automation that brings in real customers — not just clicks.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link to="/demo">
                 <ButtonPrimary className="bg-[#3563E9] hover:bg-[#2854d8]">
-                  Schedule a Demo
+                  Start Your 30-Day Free Trial — No Credit Card Needed
                 </ButtonPrimary>
               </Link>
               <ButtonSecondary className="border-[#3563E9] text-[#3563E9]" icon={true}>
@@ -133,20 +132,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Taglines Section */}
+      {/* Taglines Section - Updated with new taglines */}
       <section className="w-full py-16 bg-[#192440] text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center p-6 border border-white/10 rounded-xl bg-white/5 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold mb-3">"Smart Leads, Smarter Business"</h3>
+              <h3 className="text-2xl font-bold mb-3">"From Click to Customer — Automatically"</h3>
               <p className="text-white/80">Our AI works around the clock so you don't have to.</p>
             </div>
             <div className="flex flex-col items-center text-center p-6 border border-white/10 rounded-xl bg-white/5 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold mb-3">"From Clicks to Clients, Automatically"</h3>
+              <h3 className="text-2xl font-bold mb-3">"You Focus on Service, We'll Handle the Leads"</h3>
               <p className="text-white/80">Turn your digital presence into a customer-generating machine.</p>
             </div>
             <div className="flex flex-col items-center text-center p-6 border border-white/10 rounded-xl bg-white/5 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold mb-3">"Your Business. Our Technology. More Customers."</h3>
+              <h3 className="text-2xl font-bold mb-3">"Built for Busy Businesses Who Don't Have Time to Chase Leads"</h3>
               <p className="text-white/80">The perfect partnership for service industry growth.</p>
             </div>
           </div>
@@ -236,7 +235,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonial Section */}
+      {/* Testimonial Section - Updated testimonials */}
       <section id="testimonials" className="w-full py-24 px-4 bg-[#F3F6FF]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -251,13 +250,13 @@ const Index = () => {
               </div>
               <div className="pt-6">
                 <p className="text-lg text-gray-700 mb-4">
-                  AutoLead Systems completely transformed how we find new customers. Their AI chatbot engages with website visitors 24/7 and has increased our qualified leads by 78% in just two months. The Facebook ad integration is brilliant - we're spending the same amount but getting triple the results.
+                  AutoLead filled my calendar within the first week. I no longer worry about chasing leads — I just show up to appointments. Their AI chatbot engages with website visitors 24/7 and has increased our qualified leads by 78% in just two months.
                 </p>
                 <div className="flex items-center">
                   <img className="w-12 h-12 rounded-full object-cover mr-4" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" />
                   <div>
-                    <h4 className="font-bold text-[#192440]">Michael Rodriguez</h4>
-                    <p className="text-gray-500">Martinez Electric, Owner</p>
+                    <h4 className="font-bold text-[#192440]">Ankit Patel</h4>
+                    <p className="text-gray-500">HVAC Specialist, Pune</p>
                   </div>
                 </div>
               </div>
@@ -284,7 +283,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Us Section */}
+      {/* About Us Section - Updated content */}
       <section id="about" className="w-full py-24 px-4">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2 relative">
@@ -302,12 +301,12 @@ const Index = () => {
           
           <div className="lg:w-1/2">
             <span className="text-[#3563E9] font-semibold">ABOUT AUTOLEAD SYSTEMS</span>
-            <h2 className="text-4xl font-bold mt-2 mb-6 text-[#192440]">We help service businesses thrive in the digital age</h2>
+            <h2 className="text-4xl font-bold mt-2 mb-6 text-[#192440]">Your automated growth partner</h2>
             <p className="text-gray-700 mb-4">
-              AutoLead Systems was founded by a team of marketing experts and AI specialists who saw a gap in the market: while big companies had sophisticated lead generation tools, small and medium service businesses were left behind.
+              We're AutoLead Systems — your automated growth partner. We help service-based businesses like yours turn conversations into customers using AI chatbots, smart ads, and instant follow-ups.
             </p>
             <p className="text-gray-700 mb-6">
-              Our platform combines cutting-edge AI technology with deep industry knowledge to create automated lead generation systems that work specifically for electricians, plumbers, HVAC technicians, and other service providers. We understand your business challenges and have built solutions that address them directly.
+              From the first click to the final payment, we automate every step — so you can focus on what you do best. Our platform combines cutting-edge AI technology with deep industry knowledge to create automated lead generation systems that work specifically for electricians, plumbers, HVAC technicians, and other service providers.
             </p>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center gap-2">
@@ -331,7 +330,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Updated with new CTA */}
       <section className="w-full py-20 px-4 bg-[#192440] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to transform your business growth?</h2>
@@ -340,7 +339,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <ButtonPrimary className="bg-[#3563E9] hover:bg-[#2854d8]">
-              Start Your Free Trial
+              Start Your 30-Day Free Trial — No Credit Card Needed
             </ButtonPrimary>
             <ButtonSecondary className="border-white text-white hover:bg-white/10" icon={true}>
               Schedule a Demo
